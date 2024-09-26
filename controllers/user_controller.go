@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"demo/models"
 	"demo/database"
+	"demo/models"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -19,7 +19,7 @@ func GetUsers(c *gin.Context) {
 }
 
 // CreateUser controller
-func CreateUser(c *gin.Context) {
+func CreateUser(c *gin.Context) {	
 	var user models.User
 	if err := c.ShouldBindJSON(&user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
